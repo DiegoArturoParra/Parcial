@@ -93,7 +93,9 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="BD\bdparcial.sql" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Parcial.Utilitarios\Parcial.Utilitarios.csproj">
       <Project>{765C703F-8929-47A8-9D2E-FDC4BC95D4A5}</Project>
