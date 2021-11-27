@@ -11,6 +11,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parcial.Logica", "Parcial.L
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parcial.Datos", "Parcial.Datos\Parcial.Datos.csproj", "{E2A370AE-D7A6-42DC-BEEB-7AAFC24A8668}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BD", "BD", "{0134E80D-ED95-4196-9713-9E4B1A289923}"
+	ProjectSection(SolutionItems) = preProject
+		F:\bdparcial.sql = F:\bdparcial.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
