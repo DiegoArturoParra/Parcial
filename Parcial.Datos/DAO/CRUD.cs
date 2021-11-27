@@ -12,50 +12,56 @@ namespace Parcial.Datos.DAO
         public static void Insert(Object entidad)
         {
 
-            Mapeo db = new Mapeo();
-            try
+            using (var _db = new Mapeo())
             {
-                db.Entry(entidad).State = EntityState.Added;
-                db.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
+                try
+                {
+                    _db.Entry(entidad).State = EntityState.Added;
+                    _db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+
             }
         }
         #endregion
 
         #region Metodo Actualizar Async
 
-        public static async Task Update(Object entidad)
+        public static void Update(Object entidad)
         {
 
-            Mapeo db = new Mapeo();
-            db.Entry(entidad).State = EntityState.Modified;
-            try
+            using (var _db = new Mapeo())
             {
-                await db.SaveChangesAsync();
-            }
-            catch (DbUpdateException ex) // catch DbUpdateException
-            {
-                throw ex;
+                _db.Entry(entidad).State = EntityState.Modified;
+                try
+                {
+                    _db.SaveChanges();
+                }
+                catch (DbUpdateException ex) // catch _dbUpdateException
+                {
+                    throw ex;
+                }
             }
         }
         #endregion
 
         #region Metodo Delete
-
         public static void Delete(Object entidad)
         {
-            Mapeo db = new Mapeo();
-            try
+            using (var _db = new Mapeo())
             {
-                db.Entry(entidad).State = EntityState.Deleted;
-                db.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
+                try
+                {
+                    _db.Entry(entidad).State = EntityState.Deleted;
+                    _db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
             }
         }
         #endregion
